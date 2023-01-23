@@ -1,0 +1,104 @@
+.card {
+  width: 60%;
+  margin: auto;
+  margin-top: 6px;
+  text-align: center;
+}
+.form {
+    background-color: #f5deae;
+}
+.form textarea, input{
+    background-color: #fafaf5;
+}
+.form input {
+    padding: 16px;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form textarea {
+    padding: 17px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.div-buttons-submit {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4px 0 10px 0;
+}
+.submit-btn-form {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background-color: #2d5b64;
+    color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .submit-btn-form:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+  }
+  
+  .submit-btn-form .icon {
+    position: absolute;
+    width: 70px;
+    transition: all 0.5s;
+  }
+  
+  .submit-btn-form .text {
+    transform: translateX(55px);
+  }
+  .submit-btn-form p {
+    margin: 0;
+  }
+  
+  .submit-btn-form:hover .icon {
+    width: 142px;
+  }
+  
+  .submit-btn-form:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+  }
+  
+  .submit-btn-form:focus {
+    outline: none;
+  }
+  
+  .submit-btn-form:active .icon {
+    transform: scale(0.85);
+  }
+
+
+@media (max-width: 550px) {
+  .cssbuttons-io-button {
+    padding-left: 6px;
+    width: 90px;
+    height: 40px;
+    font-size: 11px;
+  }
+  .submit-btn-form {
+    padding-left: 0;
+    width: 90px;
+    height: 40px;
+    font-size: 11px;
+  }
+  .submit-btn-form .icon {
+    width: 37px;
+  }
+  .submit-btn-form .text {
+    margin-left: -15px;
+  }
+}
+
+

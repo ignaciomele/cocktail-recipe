@@ -1,0 +1,206 @@
+.div-welcome {
+  background-color: #00000099;
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  margin: auto;
+  margin-top: 14%;
+  width: 52%;
+  text-align: center;
+}
+
+.div-buttons-submit-welcome {
+  padding: 42px 0 25px 0;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+}
+
+
+.submit-btn-welcome {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: #198754;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+    
+.submit-btn-welcome:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+}
+    
+.submit-btn-welcome .icon {
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+    
+.submit-btn-welcome .text {
+    transform: translateX(55px);
+}
+.submit-btn-welcome p {
+    margin: 0;
+}
+    
+.submit-btn-welcome:hover .icon {
+    width: 142px;
+}
+    
+.submit-btn-welcome:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+}
+    
+.submit-btn-welcome:focus {
+    outline: none;
+}
+    
+.submit-btn-welcome:active .icon {
+    transform: scale(0.85);
+}
+
+
+
+
+    
+
+.submit-btn-welcome {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: #2d5b64;
+    color: #f5f5f5;
+    cursor: pointer;
+    font-family: 'Kalam', cursive;
+}
+      
+.submit-btn-welcome:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+}
+     
+.submit-btn-welcome .icon {
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+      
+.submit-btn-welcome .text {
+    transform: translateX(55px);
+}
+.submit-btn-welcome p {
+    margin: 0;
+}
+      
+.submit-btn-welcome:hover .icon {
+    width: 142px;
+}
+    
+.submit-btn-welcome:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+}
+      
+.submit-btn-welcome:focus {
+    outline: none;
+}
+      
+.submit-btn-welcome:active .icon {
+    transform: scale(0.85);
+}
+
+      
+.cssbuttons-io-button {
+    padding: 0.35em;
+    padding-left: 1.2em;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    position: relative;
+    padding-right: 3.3em;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 16px;
+    font-family: 'Kalam', cursive;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: #2d5b64;
+    color: #f5f5f5;
+}
+.cssbuttons-io-button p {
+    margin: 0;
+}
+    
+.cssbuttons-io-button .icon {
+    background: #2d5b64;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+       
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+       
+.cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #fff;
+}
+       
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+       
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
+
+
+@media (max-width: 800px) {
+    .div-welcome {
+        margin-top: 40%;
+        width: 75%;
+    }
+    .div-buttons-submit-welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .div-form-submit-button-welcome {
+        padding-bottom: 20px;
+    }
+}

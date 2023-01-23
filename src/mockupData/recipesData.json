@@ -1,0 +1,31 @@
+{
+    "recipes": [
+        {
+            "id": 1,
+            "name": "Moscow Mule",
+            "glass": "Highball glass",
+            "ingredients": "Vodka(2 oz), zumo de lima(3/4 oz), ginger beer, bitter Angostura(1 gota), hojas de menta(para decorar), hielo.",
+            "recipe": "Añade el vodka y el jugo de lima a una coctelera con unos cubitos de hielo y agita vigorosamente. Vierta el contenidode una taza de cobre o un vaso de trago largo sobre unos cubitos de hielo y luego llenelo con cerveza de jengibre fria.",
+            "comments": "dfgfdsgfdgfdsgf",
+            "img": "/static/moscowMule.png"
+        },
+        {
+            "id": 2,
+            "name": "Gin Fizz",
+            "glass": "Large glass",
+            "ingredients": "Gin(1 1/2 oz), jugo de limón(1 oz), almibar(3/4 oz), soda fria, hielo.",
+            "recipe": "Verter en la coctelera el gin, el jugo de limon, el almibar y hielo. Agitar todo bien para crear la cabeza de espuma típica. Luego vierta a travez de un colador en un vaso largo, agregue cubitos de hielo como desee y complete con un poco de soda.",
+            "comments": "",
+            "img": "/static/moscowMule.png"
+        },
+        {
+            "id": 3,
+            "name": "Cosmopolitan",
+            "glass": "Martini glass",
+            "ingredients": "Vodka(1 oz), Triple sec(1/2), lime juice, cranberry juice(1 oz), ice cubes, lime edges to garnish.",
+            "recipe": "1-Place the vodka, triple sec, lime juice and cranberry juice into your cocktail shaker and fill with ice. 2-Shake vigorously for a few seconds then strain into your martini glass. 3-Garnish with the lime wedges.",
+            "comments": "",
+            "img": "/static/moscowMule.png"
+        }
+    ]
+}
