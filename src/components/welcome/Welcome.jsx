@@ -16,7 +16,7 @@ export default function Welcome() {
                 <h1>Welcome to Cocktail recipes</h1>
                 <div className="div-buttons-submit-welcome">
                     <div className="div-form-submit-button-welcome">
-                    <button className="button-test" onClick={()  => navigate('/cocktails-list')}>
+                    <button className="button-test" onClick={clickShowAlert}>
                         <span>EXPLORE</span>
                     </button>
                         {/* <button onClick={()  => navigate('/cocktails-list')} className="cssbuttons-io-button"><p>EXPLORE</p>
@@ -26,7 +26,7 @@ export default function Welcome() {
                         </button> */}
                     </div>
                     <div className="div-form-submit-button-welcome">
-                        <button onClick={()  => navigate('/add-cocktail')} type="submit" className="submit-btn-welcome">
+                        <button onClick={clickShowAlert} type="submit" className="submit-btn-welcome">
                             <span className="icon">
                             <p>+</p>
                             </span>
