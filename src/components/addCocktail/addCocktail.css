@@ -1,0 +1,8 @@
+.div-form-cocktail {
+    display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-image: url('../../static/bartender.jpg');
+}

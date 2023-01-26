@@ -32,13 +32,12 @@ export default function CocktailsList() {
     return (
         <>
             <div className="div-cocktails">
+                <div className="div-cocktails-content">
                 <div className="div-cocktails-header">
                     <div className="div-form-submit-button-welcome">
-                        <button onClick={() => navigate("/")} className="cssbuttons-io-button-home"><p>HOME</p>
-                            {/* <div className="icon">
-                                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
-                            </div> */}
-                        </button>
+                    <button className="button-test-list" onClick={()  => navigate('/')}>
+                        <span>HOME</span>
+                    </button>
                     </div>
                     <div className="title-cocktails">
                         <h1>Cocktails</h1>
@@ -93,6 +92,8 @@ export default function CocktailsList() {
                     }
                     </div>
                 </div>        
+                </div>
+                
             </div>
         </>
     )
