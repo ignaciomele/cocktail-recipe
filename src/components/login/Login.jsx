@@ -7,6 +7,7 @@ export default function Login() {
         name: { placeholder: 'Username', type: 'text', value: '' },
         password: { placeholder: 'Password', type: 'password', value: '' }
     })
+    const [btnLogin, setBtnLogin] = useState('Log in')
 
     const handleChange = e => {
         const { name, value } = e.target
@@ -20,17 +21,22 @@ export default function Login() {
     }
     const addDataCocktail = async e => {
         e.preventDefault()
-        console.log('login')
-        
-        swal({
-            title: "The username or password doesn't match any account. Please try again",
-            icon: "error",
-            button: "accept",
-            timer: "3000"
-        });
-        dataLogin.name.value = ''
-        dataLogin.password.value = ''
-        
+        setBtnLogin('Login...')
+        try {
+            swal({
+                title: "The username or password doesn't match any account. Please try again",
+                icon: "error",
+                button: "accept",
+                timer: "3000"
+            });
+            setTimeout(() => {
+                setBtnLogin('Log in')
+            }, 2000);
+            dataLogin.name.value = ''
+            dataLogin.password.value = ''
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 
@@ -57,7 +63,7 @@ export default function Login() {
                         required
                         />
                     })}
-                    <button type="submit" class="btn-login">Log in</button>
+                    <button type="submit" class="btn-login">{btnLogin}</button>
                 </form>
             </div>            
         </div>           
