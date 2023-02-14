@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import './form.css'
 import client from "../../lib/client";
 import { useNavigate } from "react-router-dom";
-import AlertSuccess from "../alert/AlertSuccess";
-import AlertFail from "../alert/AlertFail";
+import swal from "sweetalert";
 
 export default function Form() {
     const [dataCocktail, setDataCocktail] = useState({
@@ -11,15 +10,17 @@ export default function Form() {
         glass: { placeholder: 'Type of glass', type: 'text', value: '' },
         ingredients: { placeholder: 'Ingredients', type: 'text', value: '' },
         recipe: { placeholder: 'Recipe', type: 'text', value: '' },
-        comments: { placeholder: 'Comments', type: 'text', value: '' }
+        comments: { placeholder: 'Comments', type: 'text', value: '' },
+        photo: { placeholder: 'Image', type: 'file', value: '' }
     })
     const [addCocktailButton, setAddCocktailButton] = useState('ADD')
     const [viewAllButton, setViewAllButton] = useState('EXPLORE')
-    const [showAlertSuccess, setShowAlertSuccess] = useState(false)
-    const [showAlertFail, setShowAlertFail] = useState(false)
 
     const navigate = useNavigate();
 
+    const postFile = file => {
+
+    }
     const handleChange = e => {
         const { name, value } = e.target
         setDataCocktail(prevState => ({
@@ -33,31 +34,44 @@ export default function Form() {
 
     const addDataCocktail = async e => {
         e.preventDefault()
+        setAddCocktailButton('ADDING')
         try {
             await client.createCocktail(Object.keys(dataCocktail).reduce((acc, keyName) => {
                 acc[keyName] = dataCocktail[keyName].value
-                setTimeout(() => {
-                    setShowAlertSuccess(true)
-                }, 500)
-                setTimeout(() => {
-                    setShowAlertSuccess(false)
-                }, 4000)
                 return acc
-                
             }, {}))
+            setTimeout(() => {
+                setAddCocktailButton('ADD')
+            }, 3000);
+            setAddCocktailButton('ADDED')
+            swal({
+                title: "The cocktail was added successfully",
+                icon: "success",
+                button: "accept",
+                timer: "2000"
+            });
+            dataCocktail.name.value = ''
+            dataCocktail.glass.value = ''
+            dataCocktail.ingredients.value = ''
+            dataCocktail.recipe.value = ''
+            dataCocktail.comments.value = ''
+            dataCocktail.photo.value = ''
         } catch (error) {
+            setTimeout(() => {
+                setAddCocktailButton('ADD')
+            }, 3000);
+            swal({
+                title: "The cocktail couldn't be added",
+                icon: "error",
+                button: "accept",
+                timer: "2000"
+            });
             console.log(error)
         }
     }
 
     return(
         <>
-        {
-                showAlertSuccess === true ? <AlertSuccess/> : ''
-            }
-            {
-                showAlertFail === true ? <AlertFail/> : ''
-            }
             <div className="card mb-3">
                 <form onSubmit={e => {addDataCocktail(e)}} className="form">
                     <div className="card-header">
@@ -86,6 +100,17 @@ export default function Form() {
                             value={dataCocktail[keyName].value}
                             onChange={e => handleChange(e)}
                             />
+                            if (keyName === 'photo') return <input
+                            className="form-control" 
+                            id="exampleFormControlTextarea1"
+                            key={keyName}
+                            type={dataCocktail[keyName].type}
+                            placeholder={dataCocktail[keyName].placeholder}
+                            name={keyName}
+                            value={dataCocktail[keyName].value}
+                            onChange={e => handleChange(e)}
+                            />
+                            
                             return <textarea
                             className="form-control" 
                             id="exampleFormControlTextarea1"

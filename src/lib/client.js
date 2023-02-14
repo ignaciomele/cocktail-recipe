@@ -16,7 +16,7 @@ const client = {
     createCocktail(dataCocktail) {
         const url = `${API_PATH}/cocktails`
         return axios.post(url, {dataCocktail}, DEFAULT_REQUEST_CONFIG)
-            .then(res => res.json())
+            .then(res => res.json)
     }
 }
 

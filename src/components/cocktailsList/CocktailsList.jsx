@@ -83,7 +83,10 @@ export default function CocktailsList() {
                                         <p><b>Recipe:</b> {cocktail.recipe}</p>
                                     </div>
                                     <div>
-                                        {/* <img src={cocktails.img} alt=''/> */}
+                                        <p><b>comments:</b> {cocktail.comments}</p>
+                                    </div>
+                                    <div>
+                                        <img src={cocktail.img} alt=''/>
                                     </div>
                                 </div>
                                 </div>
