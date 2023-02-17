@@ -241,6 +241,9 @@
 
 
 @media (max-width: 800px) {
+    .div-cocktails-content {
+        width: 90%;
+    }
     .div-cocktails-header {
         display: flex;
         flex-direction: row;
@@ -278,7 +281,7 @@
     transition: all 0.5s;
     padding: 0.35em;
     letter-spacing: 0.05em;
-    width: 150px;
+    width: 88px;
     height: 50px;
     border-radius: 5px;
     font-family: 'Kalam', cursive;
