@@ -5,7 +5,6 @@ import AddCocktail from './components/addCocktail/AddCocktail'
 import CocktailsList from './components/cocktailsList/CocktailsList';
 import Login from './components/login/Login';
 
-
 function App() {
   return (    
     <div className="App">

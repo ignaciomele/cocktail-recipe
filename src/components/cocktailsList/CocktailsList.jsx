@@ -4,10 +4,19 @@ import 'bootstrap/js/dist/collapse';
 // import client from "../../lib/client";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import LoaderCocktails from "../loaderCocktails/LoaderCocktails";
 
 export default function CocktailsList() {
     const [listCocktails, setListCocktails] = useState([])
     const [searchCocktails, setSearchCocktails] = useState('')
+
+    const [showLoaderCocktails, setShowLoaderCocktails] = useState(false)
+        useEffect(() => {
+            setShowLoaderCocktails(true)
+            setTimeout(() => {
+            setShowLoaderCocktails(false)
+            }, 2000);
+        }, [])
 
     const navigate = useNavigate();
 
@@ -56,7 +65,13 @@ export default function CocktailsList() {
                     </div>
                 </div>
                 <div className="div-cocktails-list">
-                    <div className="accordion-list-cocktails" id="accordionListCocktails">
+                    {showLoaderCocktails ? (
+                        <div className="div-loaderCocktails">
+                            <LoaderCocktails/>
+                        </div>
+                    ) :
+                    (
+                        <div className="accordion-list-cocktails" id="accordionListCocktails">
                     {
                         searchDataCocktails(cocktails).map((cocktail, i) => (
                             <div key={i} className="accordion-item">
@@ -94,6 +109,9 @@ export default function CocktailsList() {
                         ))
                     }
                     </div>
+                    )
+                    }
+                    
                 </div>
 
 
