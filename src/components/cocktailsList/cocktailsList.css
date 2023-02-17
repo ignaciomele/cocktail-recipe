@@ -60,6 +60,8 @@
 .accordion-body {
     display: flex;
     text-align: justify;
+    flex-direction: column;
+    align-items: center;
     background-color: #e6bf8cba;
 }
 .accordion-body div {
