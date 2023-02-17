@@ -3,8 +3,8 @@ const cocktails = [
         "id": '1',
         "name": "Moscow Mule",
         "glass": "Highball glass",
-        "ingredients": "Vodka(2 oz), zumo de lima(3/4 oz), ginger beer, bitter Angostura(1 gota), hojas de menta(para decorar), hielo.",
-        "recipe": "Añade el vodka y el jugo de lima a una coctelera con unos cubitos de hielo y agita vigorosamente. Vierta el contenidode una taza de cobre o un vaso de trago largo sobre unos cubitos de hielo y luego llenelo con cerveza de jengibre fria.",
+        "ingredients": "Vodka(2 oz), lima syrup(3/4 oz), ginger beer, bitter Angostura(1 gota), mint leaves (to decorate), ice.",
+        "recipe": "Add the vodka and lime juice to a cocktail shaker with a few ice cubes and shake vigorously. Pour the contents of a copper mug or long drink glass over a few ice cubes, then fill with cold ginger beer.",
         "comments": "",
         "img": "/static/moscowMule.png"
     },
@@ -12,8 +12,8 @@ const cocktails = [
         "id": '2',
         "name": "Gin Fizz",
         "glass": "Large glass",
-        "ingredients": "Gin(1 1/2 oz), jugo de limón(1 oz), almibar(3/4 oz), soda fria, hielo.",
-        "recipe": "Verter en la coctelera el gin, el jugo de limon, el almibar y hielo. Agitar todo bien para crear la cabeza de espuma típica. Luego vierta a travez de un colador en un vaso largo, agregue cubitos de hielo como desee y complete con un poco de soda.",
+        "ingredients": "Gin(1 1/2 oz), lemon juice(1 oz), syrup(3/4 oz), cold soda, ice.",
+        "recipe": "Pour the gin, lemon juice, syrup and ice into the shaker. Shake everything well to create the typical foam head. Then pour through a strainer into a tall glass, add ice cubes as desired and top off with a little soda.",
         "comments": "",
         "img": "/static/gin-fizz.png"
     },
