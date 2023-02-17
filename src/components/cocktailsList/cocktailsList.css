@@ -60,9 +60,8 @@
 .accordion-body {
     display: flex;
     text-align: justify;
-    flex-direction: column;
-    align-items: center;
     background-color: #e6bf8cba;
+    
 }
 .accordion-body div {
     padding-right: 20px;
@@ -247,6 +246,10 @@
         flex-direction: row;
         align-items: baseline;
         padding: 7px;
+    }
+    .accordion-body {
+        flex-direction: column;
+    align-items: center;
     }
     .cssbuttons-io-button-home {
         height: 24px;
