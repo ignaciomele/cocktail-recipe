@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import './cocktailsList.css'
 import 'bootstrap/js/dist/collapse';
-import client from "../../lib/client";
+// import client from "../../lib/client";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function CocktailsList() {
     const [listCocktails, setListCocktails] = useState([])
@@ -10,14 +11,14 @@ export default function CocktailsList() {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const getCocktailsList = async () => {
-            const res = await client.getCocktails()
-            if (res.data.cocktails && res.data.cocktails.length) setListCocktails(() => res.data.cocktails.map(cocktail => ({...cocktail})))
-        }
+    // useEffect(() => {
+    //     const getCocktailsList = async () => {
+    //         const res = await client.getCocktails()
+    //         if (res.data.cocktails && res.data.cocktails.length) setListCocktails(() => res.data.cocktails.map(cocktail => ({...cocktail})))
+    //     }
     
-        getCocktailsList()
-    }, [])
+    //     getCocktailsList()
+    // }, [])
 
 
 
@@ -28,6 +29,8 @@ export default function CocktailsList() {
         )
     } 
     
+    // COCKTAILS FROM REDUX
+    const cocktails = useSelector(state => state.cocktails)
     
     return (
         <>
@@ -51,8 +54,72 @@ export default function CocktailsList() {
                             onChange={e => setSearchCocktails(e.target.value)}
                             />
                     </div>
-                </div>              
+                </div>
                 <div className="div-cocktails-list">
+                    <div className="accordion-list-cocktails" id="accordionListCocktails">
+                    {
+                        searchDataCocktails(cocktails).map((cocktail, i) => (
+                            <div key={i} className="accordion-item">
+                                <h2 className="accordion-header" id="headingOne">
+                                <button 
+                                    className="accordion-button" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target={'#collapse' + i}
+                                    aria-expanded="true" 
+                                    aria-controls="collapseOne">
+                                <h3>{cocktail.name}</h3>    
+                                </button>
+                                </h2>
+                                <div 
+                                    id={'collapse' + i} 
+                                    className="accordion-collapse collapse" 
+                                    aria-labelledby="headingOne" 
+                                    data-bs-parent="#accordionListCocktails">
+                                <div className="accordion-body">
+                                    <div>
+                                        <p><b>Type of glass:</b> {cocktail.glass}</p>
+                                        <p><b>Ingredients:</b> {cocktail.ingredients}</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <p><b>Recipe:</b> {cocktail.recipe}</p>
+                                    </div>
+                                    <div>
+                                        <img src={cocktail.img} alt=''/>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* <div className="div-cocktails-list">
                     <div className="accordion-list-cocktails" id="accordionListCocktails">
                     {
                         searchDataCocktails(listCocktails).map((cocktail, i) => (
@@ -94,7 +161,7 @@ export default function CocktailsList() {
                         ))
                     }
                     </div>
-                </div>        
+                </div>         */}
                 </div>
                 
             </div>

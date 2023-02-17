@@ -127,7 +127,7 @@ export default function Form() {
                         </div>
 
                         <div className="div-buttons-submit">
-                            <button className="button-test" onClick={()  => navigate('/cocktails-list')}>
+                            <button className="button-explore" onClick={()  => navigate('/cocktails-list')}>
                                 <span>{viewAllButton}</span>
                             </button>                            
                             <button type="submit" className="submit-btn-form">

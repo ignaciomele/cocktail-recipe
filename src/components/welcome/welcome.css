@@ -140,7 +140,7 @@
 }
 
 
-.button-test {
+.button-explore {
     
     background-color: #2d5b64;
     border: none;
@@ -160,14 +160,14 @@
     justify-content: center;
    }
    
-   .button-test span {
+   .button-explore span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
    }
    
-   .button-test span:after {
+   .button-explore span:after {
     content: '»';
     position: absolute;
     opacity: 0;
@@ -176,15 +176,18 @@
     transition: 0.5s;
    }
    
-   .button-test:hover span {
+   .button-explore:hover span {
     padding-right: 15px;
    }
    
-   .button-test:hover span:after {
+   .button-explore:hover span:after {
     opacity: 1;
     right: 0;
    }
-
+.div-btn-logout {
+    display: flex;
+    justify-content: center;
+}
 
 
 @media (max-width: 800px) {

@@ -7,6 +7,7 @@
   background-image: url('../../static/bartender.jpg');
 }
 .div-cocktails-content {
+    position: absolute;
     width: 80%;
     margin: auto;
     padding-bottom: 56px;

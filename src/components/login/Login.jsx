@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import './login.css'
 import swal from "sweetalert";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../features/auth/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [dataLogin, setDataLogin] = useState({
@@ -8,6 +11,7 @@ export default function Login() {
         password: { placeholder: 'Password', type: 'password', value: '' }
     })
     const [btnLogin, setBtnLogin] = useState('Log in')
+    const navigate = useNavigate();
 
     const handleChange = e => {
         const { name, value } = e.target
@@ -19,16 +23,28 @@ export default function Login() {
             }
         }))
     }
-    const addDataCocktail = async e => {
+    const dispatch = useDispatch()
+    const userState = useSelector(state => state.user)
+
+    const handleLogin = async e => {
         e.preventDefault()
-        setBtnLogin('Login...')
-        try {
+
+        if (dataLogin.name.value === userState.username && dataLogin.password.value === userState.password) {
+            dispatch(login({
+                name: dataLogin.name.value,
+                password: dataLogin.password.value,
+                loggedIn: true
+            }))
+        } else {
             swal({
                 title: "The username or password doesn't match any account. Please try again",
                 icon: "error",
                 button: "accept",
                 timer: "3000"
             });
+        }
+        setBtnLogin('Login...')
+        try {
             setTimeout(() => {
                 setBtnLogin('Log in')
             }, 2000);
@@ -39,6 +55,7 @@ export default function Login() {
         }
     }
 
+    
 
     return(
         <>
@@ -50,7 +67,7 @@ export default function Login() {
                 <div className="title-login">
                     <h3>Log in</h3>
                 </div>
-                <form onSubmit={e => {addDataCocktail(e)}} className="form-login">
+                <form onSubmit={e => {handleLogin(e)}} className="form-login">
                     {Object.keys(dataLogin).map(keyName => {
                         return <input
                         className="form-control-login" 
@@ -63,11 +80,11 @@ export default function Login() {
                         required
                         />
                     })}
-                    <button type="submit" class="btn-login">{btnLogin}</button>
+                    <button type="submit" className="btn-login">{btnLogin}</button>
+                    <button onClick={()  => navigate('/')} type="submit" className="btn-login">Home</button>
                 </form>
-            </div>            
-        </div>           
-        
+            </div>
+        </div>
         </>
     )
 }

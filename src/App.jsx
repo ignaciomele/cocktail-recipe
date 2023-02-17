@@ -7,11 +7,7 @@ import Login from './components/login/Login';
 
 
 function App() {
-
-
-
-  return (
-    
+  return (    
     <div className="App">
       <Router>
         <Routes>
@@ -20,7 +16,7 @@ function App() {
           <Route path="/cocktails-list" element={<CocktailsList />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-      </Router>
+      </Router>       
     </div>
   );
 }
