@@ -62,9 +62,9 @@ export default function CocktailsList() {
                     <button className="button-test-list" onClick={()  => navigate('/')}>
                         <span>HOME</span>
                     </button>
-                    <button className="button-test-list" onClick={()  => navigate('/chat')}>
+                    {/* <button className="button-test-list" onClick={()  => navigate('/chat')}>
                         <span>Chat</span>
-                    </button>
+                    </button> */}
                     </div>
                     <div className="title-cocktails">
                         <h1>Cocktails</h1>
