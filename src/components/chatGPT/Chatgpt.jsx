@@ -43,6 +43,7 @@ const Chatgpt = () => {
     setInput("");
   };
 
+  
   return (
     <div className="main-chat">
       <button className="button-test-list" onClick={()  => navigate('/cocktails-list')}>
