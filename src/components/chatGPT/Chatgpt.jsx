@@ -13,14 +13,14 @@ const IndexPage = () => {
 
   const navigate = useNavigate();
 
-  // const OpenAI_API_KEY = "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";
+  const OpenAI_API_KEY = "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";
 
   const completionCall = async (input) => {
     const updatedMessages = [...messages, { role: "user", content: input }];
     setMessages(updatedMessages);
 
     const configuration = new Configuration({
-      apiKey: process.env.OPENAI_API_KEY || "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",
+      apiKey: process.env.OPENAI_API_KEY || OpenAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
 
