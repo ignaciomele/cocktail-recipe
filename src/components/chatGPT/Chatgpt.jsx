@@ -13,7 +13,7 @@ const Chatgpt = () => {
 
   const navigate = useNavigate();
 
-  const OpenAI_API_KEY = "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";
+  const OpenAI_API_KEY = "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";
 
   const completionCall = async (input) => {
     const updatedMessages = [...messages, { role: "user", content: input }];
@@ -43,7 +43,7 @@ const Chatgpt = () => {
     setInput("");
   };
 
-  
+
   return (
     <div className="main-chat">
       <button className="button-test-list" onClick={()  => navigate('/cocktails-list')}>
