@@ -2,9 +2,12 @@ import React, {useState, useEffect} from "react";
 import './cocktailsList.css'
 import 'bootstrap/js/dist/collapse';
 // import client from "../../lib/client";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { selectUser } from '../../features/auth/userSlice';
 import LoaderCocktails from "../loaderCocktails/LoaderCocktails";
+
+import EditP from "../editFiles/EditP";
 
 export default function CocktailsList() {
     const [listCocktails, setListCocktails] = useState([])
@@ -39,8 +42,17 @@ export default function CocktailsList() {
     } 
     
     // COCKTAILS FROM REDUX
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [showEditP, setShowEditP] = useState(false)
     const cocktails = useSelector(state => state.cocktails)
-    
+    const user = useSelector(selectUser)
+
+    const closeModalCallback = id => {
+        setIsModalOpen(prevState => !prevState)
+        setShowEditP(true)
+        // navigate(`/cocktails-list/${id}`)
+    };
+
     return (
         <>
             <div className="div-cocktails">
@@ -49,6 +61,9 @@ export default function CocktailsList() {
                     <div className="div-form-submit-button-welcome">
                     <button className="button-test-list" onClick={()  => navigate('/')}>
                         <span>HOME</span>
+                    </button>
+                    <button className="button-test-list" onClick={()  => navigate('/chat')}>
+                        <span>Chat</span>
                     </button>
                     </div>
                     <div className="title-cocktails">
@@ -83,7 +98,7 @@ export default function CocktailsList() {
                                     data-bs-target={'#collapse' + i}
                                     aria-expanded="true" 
                                     aria-controls="collapseOne">
-                                <h3>{cocktail.name}</h3>    
+                                <h3>{cocktail.name}</h3>
                                 </button>
                                 </h2>
                                 <div 
@@ -93,6 +108,8 @@ export default function CocktailsList() {
                                     data-bs-parent="#accordionListCocktails">
                                 <div className="accordion-body">
                                     <div>
+                                        {user ? <button className="button-explore" onClick={() => closeModalCallback(cocktail.id)}>EDITAR</button> : ''}
+                                        {showEditP ? <EditP idCocktail={cocktail.id}/> : ''}
                                         <p><b>Type of glass:</b> {cocktail.glass}</p>
                                         <p><b>Ingredients:</b> {cocktail.ingredients}</p>
                                     </div>
@@ -111,7 +128,6 @@ export default function CocktailsList() {
                     </div>
                     )
                     }
-                    
                 </div>
 
 

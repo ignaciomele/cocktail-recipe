@@ -1,21 +1,9 @@
 import React from "react";
 import './welcome.css'
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "../../features/auth/userSlice";
 
 export default function Welcome() {
     const navigate = useNavigate();
-    const user = useSelector(selectUser)
-    const dispatch = useDispatch()
-    const handleLogout = (e) => {
-        e.preventDefault()
-        dispatch(logout())
-    }
-
-    const clickShowAlert = () => {
-        alert("We are working... We'll be back soon!")
-    }
     
     return(
         <>
