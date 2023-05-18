@@ -1,0 +1,60 @@
+.main-chat {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-image: url('../../static/bartender.jpg');
+  }
+.form-chat {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+.form-chat input {
+  background-color: #f8debd;
+  padding: 11px;
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.chat-body {
+  background-color: #e6bf8cba;
+}
+
+.chatLog {
+  width: 80%;
+}
+
+.text-user {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-align: initial;
+}
+.text-chat {
+  background-color: #deb887eb;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-align: initial;
+}
+
+.img-logoCocktails-chat {
+  width: 40px;
+  height: 40px;
+}
+.img-avatar-chat {
+  width: 50px;
+  height: 50px;
+}
+.text-chat-response {
+  margin-left: 20px;
+  font-weight: 600;
+}
+.text-chat-response-input {
+  margin-left: 10px;
+  font-weight: 600;
+}
