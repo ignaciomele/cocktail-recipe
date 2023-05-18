@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import logoCocktails from "../../static/logoCocktails.png"
 import avatar from "../../static/avatar.png"
 
-const IndexPage = () => {
+const Chatgpt = () => {
   const [input, setInput] = useState("");
   const [response, setResponse] = useState("");
   const [log, setLog] = useState([]);
@@ -88,4 +88,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default Chatgpt;
